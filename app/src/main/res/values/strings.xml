@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">PMUCourseProject</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string-array name="dropdown">
+        <item>Normal</item>
+        <item>Satellite</item>
+        <item>Terrain</item>
+        <item>Hybrid</item>
+    </string-array>
+    <string-array name="oblast">
+        <item>Всички</item>
+        <item>Видин</item>
+        <item>Монтана</item>
+        <item>Враца</item>
+        <item>Плевен</item>
+        <item>Велико Търново</item>
+        <item>Русе</item>
+        <item>Силистра</item>
+        <item>Добрич</item>
+        <item>София Област</item>
+        <item>София Град</item>
+        <item>Ловеч</item>
+        <item>Габрово</item>
+        <item>Търговище</item>
+        <item>Разград</item>
+        <item>Шумен</item>
+        <item>Варна</item>
+        <item>Перник</item>
+        <item>Кюстендил</item>
+        <item>Пазарджик</item>
+        <item>Пловдив</item>
+        <item>Стара Загора</item>
+        <item>Сливен</item>
+        <item>Ямбол</item>
+        <item>Бургас</item>
+        <item>Благоевград</item>
+        <item>Смолян</item>
+        <item>Кърджали</item>
+        <item>Хасково</item>
+    </string-array>
+</resources>

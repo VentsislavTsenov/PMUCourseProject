@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+    <Button
+        android:id="@+id/zoomoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:text="-"
+        android:textColor="#ffffff" />
+    <Button
+        android:id="@+id/zoominButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:text="+"
+        android:textColor="#ffffff" />
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:text="Back"
+        android:textColor="#ffffff" />
+    <Button
+        android:id="@+id/currLocationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:text="My location"
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:spinnerMode="dropdown"
+        android:visibility="visible" />
+
+    <Spinner
+        android:id="@+id/oblast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="#359c5e"
+        android:padding="8dp"
+        android:spinnerMode="dropdown"
+        android:visibility="visible" />
+
+</RelativeLayout>
