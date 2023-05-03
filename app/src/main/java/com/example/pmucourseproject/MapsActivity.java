@@ -24,7 +24,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +32,6 @@ public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMarke
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
-
-    private Marker myLocMarker = null;
 
     private Button zoomin_button;
     private Button zoomout_button;
@@ -75,7 +72,7 @@ public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMarke
         Blagoevgrad,
         Smolqn,
         Kurdzhali,
-        Haskovo;
+        Haskovo
     }
 
     @Override
@@ -2264,19 +2261,15 @@ public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMarke
             return;
         }
 
-        fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if (location != null) {
-                    currentLocation = location;
-                    LatLng myLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-                    if (myLocMarker != null)
-                    {
-                        myLocMarker.remove();
-                    }
-                    myLocMarker = mMap.addMarker(new MarkerOptions()
-                            .position(myLocation));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                mMap.setMyLocationEnabled(true);
+                currentLocation = task.getResult();
+                if (currentLocation != null) {
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude() ), 10));
+                }
+                else {
+                    mMap.setMyLocationEnabled(false);
                 }
             }
         });
